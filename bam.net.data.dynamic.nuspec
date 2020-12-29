@@ -1,7 +1,7 @@
 ﻿<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
   <metadata>
     <id>bam.net.data.dynamic</id>
-    <version>1.0.5-test+088bb52</version>
+    <version>1.0.5-test+5d98bb4</version>
     <authors>Bryan Apellanes</authors>
     <description>bam.net.data.dynamic</description>
   </metadata>
