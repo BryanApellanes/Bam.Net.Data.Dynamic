@@ -21,7 +21,7 @@ namespace Bam.Net.Schema.Json
             JSchemaClassManager = jSchemaClassManager;
             JsonSchemaRootPath = "./JsonSchema/";
             Logger = Log.Default;
-            SchemaManager.ManageSchema(Path.Combine(BamProfile.Data, "SchemaDefinition_FromJSchemas.json"));
+            SchemaManager.ManageSchema(Path.Combine(BamProfile.DataPath, "SchemaDefinition_FromJSchemas.json"));
         }
         
         public string JsonSchemaRootPath { get; set; }
