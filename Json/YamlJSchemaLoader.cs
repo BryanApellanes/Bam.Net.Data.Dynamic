@@ -17,14 +17,14 @@ namespace Bam.Net.Schema.Json
             Format = SerializationFormat.Yaml;
         }
         
-        public SerializationFormat Format { get; protected set; }
+        public new SerializationFormat Format { get; protected set; }
 
-        readonly object loadLock = new object();
+        readonly object _loadLock = new object();
         public override JSchema LoadSchema(string filePath)
         {
             if (!_fileSchemas.ContainsKey(filePath))
             {
-                lock (loadLock)
+                lock (_loadLock)
                 {
                     FileInfo fileInfo = new FileInfo(filePath);
                     Dictionary<object, object> schemaAsDictionary = filePath.FromYamlFile() as Dictionary<object, object>;

@@ -11,7 +11,7 @@ namespace Bam.Net.Schema.Json
             SetClassNameMunger("javaType", javaType =>
             {
                 string[] split = javaType.DelimitSplit(".");
-                string typeName = split[split.Length - 1];
+                string typeName = split[^1];
                 if (typeName.EndsWith("Entity"))
                 {
                     typeName = typeName.Truncate("Entity".Length);

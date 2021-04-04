@@ -23,13 +23,13 @@ namespace Bam.Net.Data.Dynamic.Data.Wrappers
 			this.UpdatedXrefCollectionProperties = new Dictionary<string, PropertyInfo>();
 		}
 
-		public DataInstancePropertyValueWrapper(DaoRepository repository) : this()
+		public DataInstancePropertyValueWrapper(DaoRepository daoRepository) : this()
 		{
-			this.Repository = repository;
+			this.DaoRepository = daoRepository;
 		}
 
 		[JsonIgnore]
-		public DaoRepository Repository { get; set; }
+		public DaoRepository DaoRepository { get; set; }
 
 		[JsonIgnore]
 		public Dictionary<string, PropertyInfo> UpdatedXrefCollectionProperties { get; set; }
@@ -54,7 +54,7 @@ Bam.Net.Data.Dynamic.Data.DataInstance _dataInstance;
 			{
 				if (_dataInstance == null)
 				{
-					_dataInstance = (Bam.Net.Data.Dynamic.Data.DataInstance)Repository.GetParentPropertyOfChild(this, typeof(Bam.Net.Data.Dynamic.Data.DataInstance));
+					_dataInstance = (Bam.Net.Data.Dynamic.Data.DataInstance)DaoRepository.GetParentPropertyOfChild(this, typeof(Bam.Net.Data.Dynamic.Data.DataInstance));
 				}
 				return _dataInstance;
 			}

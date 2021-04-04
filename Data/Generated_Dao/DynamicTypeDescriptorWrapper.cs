@@ -23,13 +23,13 @@ namespace Bam.Net.Data.Dynamic.Data.Wrappers
 			this.UpdatedXrefCollectionProperties = new Dictionary<string, PropertyInfo>();
 		}
 
-		public DynamicTypeDescriptorWrapper(DaoRepository repository) : this()
+		public DynamicTypeDescriptorWrapper(DaoRepository daoRepository) : this()
 		{
-			this.Repository = repository;
+			this.DaoRepository = daoRepository;
 		}
 
 		[JsonIgnore]
-		public DaoRepository Repository { get; set; }
+		public DaoRepository DaoRepository { get; set; }
 
 		[JsonIgnore]
 		public Dictionary<string, PropertyInfo> UpdatedXrefCollectionProperties { get; set; }
@@ -53,7 +53,7 @@ System.Collections.Generic.List<Bam.Net.Data.Dynamic.Data.DynamicTypePropertyDes
 			{
 				if (_properties == null)
 				{
-					_properties = Repository.ForeignKeyCollectionLoader<Bam.Net.Data.Dynamic.Data.DynamicTypeDescriptor, Bam.Net.Data.Dynamic.Data.DynamicTypePropertyDescriptor>(this).ToList();
+					_properties = DaoRepository.ForeignKeyCollectionLoader<Bam.Net.Data.Dynamic.Data.DynamicTypeDescriptor, Bam.Net.Data.Dynamic.Data.DynamicTypePropertyDescriptor>(this).ToList();
 				}
 				return _properties;
 			}
@@ -69,7 +69,7 @@ Bam.Net.Data.Dynamic.Data.DynamicNamespaceDescriptor _dynamicNamespaceDescriptor
 			{
 				if (_dynamicNamespaceDescriptor == null)
 				{
-					_dynamicNamespaceDescriptor = (Bam.Net.Data.Dynamic.Data.DynamicNamespaceDescriptor)Repository.GetParentPropertyOfChild(this, typeof(Bam.Net.Data.Dynamic.Data.DynamicNamespaceDescriptor));
+					_dynamicNamespaceDescriptor = (Bam.Net.Data.Dynamic.Data.DynamicNamespaceDescriptor)DaoRepository.GetParentPropertyOfChild(this, typeof(Bam.Net.Data.Dynamic.Data.DynamicNamespaceDescriptor));
 				}
 				return _dynamicNamespaceDescriptor;
 			}

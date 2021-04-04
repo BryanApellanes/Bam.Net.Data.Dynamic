@@ -23,13 +23,13 @@ namespace Bam.Net.Data.Dynamic.Data.Wrappers
 			this.UpdatedXrefCollectionProperties = new Dictionary<string, PropertyInfo>();
 		}
 
-		public RootDocumentWrapper(DaoRepository repository) : this()
+		public RootDocumentWrapper(DaoRepository daoRepository) : this()
 		{
-			this.Repository = repository;
+			this.DaoRepository = daoRepository;
 		}
 
 		[JsonIgnore]
-		public DaoRepository Repository { get; set; }
+		public DaoRepository DaoRepository { get; set; }
 
 		[JsonIgnore]
 		public Dictionary<string, PropertyInfo> UpdatedXrefCollectionProperties { get; set; }

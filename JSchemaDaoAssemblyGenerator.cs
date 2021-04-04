@@ -18,9 +18,9 @@ namespace Bam.Net.Schema.Json
         
         public JSchemaSchemaDefinitionGenerator JSchemaSchemaDefinitionGenerator { get; set; }
         public JSchemaEnumGenerator EnumGenerator { get; set; }
-        public string Workspace { get; set; }
+        public new string Workspace { get; set; }
         public string JsonSchemaRootPath { get; set; }
-        public string Namespace { get; set; }
+        public new string Namespace { get; set; }
 
         public void GenerateSource(string fromJsonSchemaDirectory, string writeSourceToPath)
         {

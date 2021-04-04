@@ -23,13 +23,13 @@ namespace Bam.Net.Data.Dynamic.Data.Wrappers
 			this.UpdatedXrefCollectionProperties = new Dictionary<string, PropertyInfo>();
 		}
 
-		public DynamicNamespaceDescriptorWrapper(DaoRepository repository) : this()
+		public DynamicNamespaceDescriptorWrapper(DaoRepository daoRepository) : this()
 		{
-			this.Repository = repository;
+			this.DaoRepository = daoRepository;
 		}
 
 		[JsonIgnore]
-		public DaoRepository Repository { get; set; }
+		public DaoRepository DaoRepository { get; set; }
 
 		[JsonIgnore]
 		public Dictionary<string, PropertyInfo> UpdatedXrefCollectionProperties { get; set; }
@@ -53,7 +53,7 @@ System.Collections.Generic.List<Bam.Net.Data.Dynamic.Data.DynamicTypeDescriptor>
 			{
 				if (_types == null)
 				{
-					_types = Repository.ForeignKeyCollectionLoader<Bam.Net.Data.Dynamic.Data.DynamicNamespaceDescriptor, Bam.Net.Data.Dynamic.Data.DynamicTypeDescriptor>(this).ToList();
+					_types = DaoRepository.ForeignKeyCollectionLoader<Bam.Net.Data.Dynamic.Data.DynamicNamespaceDescriptor, Bam.Net.Data.Dynamic.Data.DynamicTypeDescriptor>(this).ToList();
 				}
 				return _types;
 			}

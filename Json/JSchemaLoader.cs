@@ -33,10 +33,8 @@ namespace Bam.Net.Schema.Json
             {
                 case SerializationFormat.Json:
                     return new JsonJSchemaLoader(DefaultJSchemaResolver);
-                    break;
                 case SerializationFormat.Yaml:
                     return new YamlJSchemaLoader(DefaultJSchemaResolver);
-                    break;
                 default:
                     throw new InvalidOperationException($"Unsupported SerializationFormat: {format.ToString()}");
             }
