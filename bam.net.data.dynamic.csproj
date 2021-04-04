@@ -6,6 +6,14 @@
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
+    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+      <OutputPath>\opt\bam\build\bam.net.data.dynamic\debug</OutputPath>
+    </PropertyGroup>
+
+    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+      <OutputPath>\opt\bam\build\bam.net.data.dynamic\release</OutputPath>
+    </PropertyGroup>
+
     <ItemGroup>
         <PackageReference Include="CsvHelper" Version="12.1.2" />
         <ProjectReference Include="..\bam.net.core\bam.net.core.csproj" />
