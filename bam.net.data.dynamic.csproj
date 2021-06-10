@@ -1,10 +1,16 @@
 <Project Sdk="Microsoft.NET.Sdk">
-
     <PropertyGroup>
         <TargetFramework>net5.0</TargetFramework>
+        <RootNamespace>Bam.Net</RootNamespace>
+        <PackageId>bam.net.data.dynamic</PackageId>
+        <Version>1.0.5</Version>
+        <Authors>Bryan Apellanes</Authors>
+        <Company>Three Headz</Company>
         <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
         <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-    </PropertyGroup>
+        <Description>Bam Framework for .NET Core</Description>
+        <PackageVersion>1.0.6</PackageVersion>
+    </PropertyGroup>    
 
     <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
       <OutputPath>\opt\bam\build\debug\bam.net.data.dynamic\</OutputPath>
