@@ -1,28 +1,24 @@
-<Project Sdk="Microsoft.NET.Sdk">
-    <PropertyGroup>
-        <TargetFramework>net5.0</TargetFramework>
-        <RootNamespace>Bam.Net</RootNamespace>
-        <PackageId>bam.net.data.dynamic</PackageId>
-        <Version>1.0.5</Version>
-        <Authors>Bryan Apellanes</Authors>
-        <Company>Three Headz</Company>
-        <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
-        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
-        <Description>Bam Framework for .NET Core</Description>
-        <PackageVersion>1.0.6</PackageVersion>
-    </PropertyGroup>    
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
-      <OutputPath>\opt\bam\build\debug\bam.net.data.dynamic\</OutputPath>
-    </PropertyGroup>
-
-    <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
-      <OutputPath>\opt\bam\build\release\bam.net.data.dynamic\</OutputPath>
-    </PropertyGroup>
-
-    <ItemGroup>
-        <PackageReference Include="CsvHelper" Version="12.1.2" />
-        <ProjectReference Include="..\bam.net.core\bam.net.core.csproj" />
-    </ItemGroup>
-
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+    <RootNamespace>Bam.Net</RootNamespace>
+    <PackageId>bam.net.data.dynamic</PackageId>
+    <Version>1.0.6-test+9f87ce9</Version>
+    <Authors>Bryan Apellanes</Authors>
+    <Company>Three Headz</Company>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Description>Bam Framework for .NET Core</Description>
+    <PackageVersion>1.0.6</PackageVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputPath>\opt\bam\build\debug\bam.net.data.dynamic\</OutputPath>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputPath>\opt\bam\build\release\bam.net.data.dynamic\</OutputPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="bam.net.core" Version="1.0.*" />
+    <PackageReference Include="CsvHelper" Version="12.1.2" />
+  </ItemGroup>
 </Project>
