@@ -3,7 +3,7 @@
     <TargetFramework>net5.0</TargetFramework>
     <RootNamespace>Bam.Net</RootNamespace>
     <PackageId>bam.net.data.dynamic</PackageId>
-    <Version>1.0.6-f16f9fe</Version>
+    <Version>1.0.6-c180f3d</Version>
     <Authors>Bryan Apellanes</Authors>
     <Company>Three Headz</Company>
     <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
